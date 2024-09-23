@@ -1,10 +1,39 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Helmet } from 'react-helmet-async'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import { z } from 'zod'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
+const signInForm = z.object({
+  email: z.string().email('Informe um e-mail válido.'),
+})
+
+type SignInForm = z.infer<typeof signInForm>
+
 export function SignIn() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<SignInForm>({
+    resolver: zodResolver(signInForm), // Use zodResolver to integrate Zod validation
+  })
+
+  async function handleSignIn(data: SignInForm) {
+    console.log(data)
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+    toast.success('Enviamos um link de autenticação para seu e-mail!', {
+      action: {
+        label: 'Reenviar',
+        onClick: () => handleSignIn(data),
+      },
+    })
+  }
+
   return (
     <>
       <Helmet title="Login" />
@@ -19,13 +48,16 @@ export function SignIn() {
             </p>
           </div>
 
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit(handleSignIn)} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
-              <Input id="email" type="email" />
+              <Input id="email" type="email" {...register('email')} />
+              {errors.email && (
+                <p className="text-sm text-primary">{errors.email.message}</p>
+              )}
             </div>
 
-            <Button className="w-full" type="submit">
+            <Button disabled={isSubmitting} className="w-full" type="submit">
               Acessar painel
             </Button>
           </form>
