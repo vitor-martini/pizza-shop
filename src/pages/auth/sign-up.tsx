@@ -10,10 +10,10 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 const signUpForm = z.object({
-  restaurantName: z.string().min(1, 'Obrigatório'),
-  managerName: z.string().min(1, 'Obrigatório'),
-  phone: z.string().min(1, 'Obrigatório'),
-  email: z.string().email('Obrigatório'),
+  restaurantName: z.string().min(1),
+  managerName: z.string().min(1),
+  phone: z.string().min(1),
+  email: z.string().email(),
 })
 
 type SignUpForm = z.infer<typeof signUpForm>
@@ -64,11 +64,6 @@ export function SignUp() {
                 id="restaurantName"
                 {...register('restaurantName')}
               />
-              {errors.restaurantName && (
-                <p className="text-sm text-primary">
-                  {errors.restaurantName.message}
-                </p>
-              )}
             </div>
 
             <div className="space-y-2">
@@ -78,26 +73,19 @@ export function SignUp() {
                 id="managerName"
                 {...register('managerName')}
               />
-              {errors.managerName && (
-                <p className="text-sm text-primary">
-                  {errors.managerName.message}
-                </p>
-              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="phone">Seu celular</Label>
               <Input id="phone" type="tel" {...register('phone')} />
-              {errors.phone && (
-                <p className="text-sm text-primary">{errors.phone.message}</p>
-              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
               <Input id="email" type="email" {...register('email')} />
-              {errors.email && (
-                <p className="text-sm text-primary">{errors.email.message}</p>
-              )}
             </div>
+
+            {Object.keys(errors).length > 0 && (
+              <p className="text-sm text-primary">Preencha todos os campos!</p>
+            )}
 
             <Button disabled={isSubmitting} className="w-full" type="submit">
               Finalizar cadastro
