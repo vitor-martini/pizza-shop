@@ -1,4 +1,5 @@
 import { BarChart } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import colors from 'tailwindcss/colors'
 
@@ -21,6 +22,29 @@ const COLORS = [
 ]
 
 export function PopularProductsChart() {
+  const [cardColor, setCardColor] = useState('')
+
+  const updateCardColor = () => {
+    const rootStyle = getComputedStyle(document.documentElement)
+    const cardBackground = rootStyle.getPropertyValue('--card').trim()
+    setCardColor(`hsl(${cardBackground})`)
+  }
+
+  useEffect(() => {
+    updateCardColor()
+
+    const observer = new MutationObserver(() => {
+      updateCardColor()
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <Card className="col-span-3">
       <CardHeader className="pb-8">
@@ -42,6 +66,7 @@ export function PopularProductsChart() {
               cy="50%"
               outerRadius={86}
               innerRadius={64}
+              strokeWidth={8}
               labelLine={false}
               label={({
                 cx,
@@ -77,6 +102,7 @@ export function PopularProductsChart() {
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index]}
+                  stroke={cardColor}
                   className="hover:opacity-80"
                 />
               ))}
