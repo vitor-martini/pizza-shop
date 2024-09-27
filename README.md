@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Ignite - Delivery App
+This project is a **Delivery App**  developed using **React**, **TypeScript**, and **Vite**. The project is part of the **Rocketseat Ignite course**. In this project, I followed the instructions and coded it while watching the lessons. The goal was to solidify my understanding of modern web development practices and improve my TypeScript skills.
 
-Currently, two official plugins are available:
+## Tech Stack 
+ 
+1. **Frontend Libraries:**  
+  - React (`react`, `react-dom`)
+ 
+  - React Router (`react-router-dom`)
+ 
+  - React Hook Form (`react-hook-form`)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  - Recharts (for chart rendering)
 
-## Expanding the ESLint configuration
+  - Shadcn/UI (various components like dialog, dropdown menu, label, select, separator, skeleton)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  - Lucide React (icons)
+ 
+2. **Backend Interaction:**  
+  - Axios (`axios`) for making HTTP requests.
+ 
+  - React Query (`@tanstack/react-query`) for data fetching and synchronization.
+ 
+3. **Form Validation:**  
+  - Zod (`zod`) for schema validation.
 
-- Configure the top-level `parserOptions` property like this:
+  - Hookform resolvers for integrating with Zod.
+ 
+4. **Styling:**  
+  - Tailwind CSS.
+ 
+5. **Development Tools:** 
+  - Vite as the build tool.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - ESLint for linting.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+  - Prettier for code formatting.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+  - Typescript for type checking.
