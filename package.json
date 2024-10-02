@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .tsx,.ts",
-    "lint:fix": "eslint . --ext .tsx,.ts --fix"
+    "lint:fix": "eslint . --ext .tsx,.ts --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -42,19 +43,25 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/node": "^22.5.5",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.9.0",
+    "happy-dom": "^15.7.4",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.12",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vitest": "^2.1.1"
   }
 }
