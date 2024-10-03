@@ -13,28 +13,37 @@ This project is a **Delivery App**  developed using **React**, **TypeScript**, a
 
   - Recharts (for chart rendering)
 
-  - Shadcn/UI (various components like dialog, dropdown menu, label, select, separator, skeleton)
-
   - Lucide React (icons)
  
-2. **Backend Interaction:**  
-  - Axios (`axios`) for making HTTP requests.
+  - Shadcn/UI (various components like dialog, dropdown menu, label, select, separator, skeleton)
  
-  - React Query (`@tanstack/react-query`) for data fetching and synchronization.
+2. **Backend Interaction:**  
+  - Axios (`axios`) for HTTP requests
+ 
+  - React Query (`@tanstack/react-query`) for data fetching and synchronization
  
 3. **Form Validation:**  
-  - Zod (`zod`) for schema validation.
-
-  - Hookform resolvers for integrating with Zod.
+  - Zod (`zod`) for schema validation
+ 
+  - Hookform Resolvers (`@hookform/resolvers`) for integrating with Zod
  
 4. **Styling:**  
-  - Tailwind CSS.
+  - Tailwind CSS and plugins (`tailwindcss`, `tailwindcss-animate`, `tailwind-merge`)
  
-5. **Development Tools:** 
-  - Vite as the build tool.
+  - Class Variance Authority (`class-variance-authority`) for managing utility classes
+ 
+5. **Date Utilities:**  
+  - Date-fns (`date-fns`) for date manipulation
+ 
+  - React Day Picker (`react-day-picker`) for date picking functionality
+ 
+6. **Development Tools:** 
+  - Vite as the build tool
+ 
+  - ESLint for linting (`eslint`, `@rocketseat/eslint-config`)
+ 
+  - Prettier for code formatting (`prettier`, `prettier-plugin-tailwindcss`)
 
-  - ESLint for linting.
-
-  - Prettier for code formatting.
-
-  - Typescript for type checking.
+  - Typescript for type checking
+ 
+  - Vitest (`vitest`) and Testing Library (`@testing-library/react`, `@testing-library/jest-dom`) for testing
