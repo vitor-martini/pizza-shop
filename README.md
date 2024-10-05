@@ -1,6 +1,8 @@
+# Ignite - Delivery App 
+This project is a **Delivery App**  developed using **React** , **TypeScript** , and **Vite** . It is part of the **Rocketseat Ignite course** . The objective of this project was to create a modern web application interface using the latest technologies and best practices in React development.
+## Objective 
 
-# Ignite - Delivery App
-This project is a **Delivery App**  developed using **React**, **TypeScript**, and **Vite**. The project is part of the **Rocketseat Ignite course**. In this project, I followed the instructions and coded it while watching the lessons. The goal was to solidify my understanding of modern web development practices and improve my TypeScript skills.
+The goal of this course was to build a delivery management system with a modern user interface, focusing on performance, usability, and maintainability, using the most up-to-date tools and libraries in the React ecosystem.
 
 ## Tech Stack 
  
@@ -14,13 +16,15 @@ This project is a **Delivery App**  developed using **React**, **TypeScript**, a
   - Recharts (for chart rendering)
 
   - Lucide React (icons)
- 
+
   - Shadcn/UI (various components like dialog, dropdown menu, label, select, separator, skeleton)
  
 2. **Backend Interaction:**  
   - Axios (`axios`) for HTTP requests
  
   - React Query (`@tanstack/react-query`) for data fetching and synchronization
+ 
+  - Mock Service Worker (MSW) (`msw`) for API mocking during development and testing
  
 3. **Form Validation:**  
   - Zod (`zod`) for schema validation
@@ -29,8 +33,6 @@ This project is a **Delivery App**  developed using **React**, **TypeScript**, a
  
 4. **Styling:**  
   - Tailwind CSS and plugins (`tailwindcss`, `tailwindcss-animate`, `tailwind-merge`)
- 
-  - Class Variance Authority (`class-variance-authority`) for managing utility classes
  
 5. **Date Utilities:**  
   - Date-fns (`date-fns`) for date manipulation
@@ -44,6 +46,13 @@ This project is a **Delivery App**  developed using **React**, **TypeScript**, a
  
   - Prettier for code formatting (`prettier`, `prettier-plugin-tailwindcss`)
 
-  - Typescript for type checking
+  - TypeScript for type checking
  
   - Vitest (`vitest`) and Testing Library (`@testing-library/react`, `@testing-library/jest-dom`) for testing
+ 
+  - **Playwright**  (`@playwright/test`) for end-to-end testing and browser automation
+  
+## Print Screen
+![SignIn](./public/sign-in.png)
+![Dashboard](./public/dashboard.png)
+![Orders](./public/orders.png)
