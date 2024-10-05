@@ -7,6 +7,7 @@ import { getDayOrdersAmountMock } from './get-day-orders-amount-mock'
 import { getManagedRestaurantMock } from './get-managed-restaurant-mock'
 import { getMonthCanceledOrdersAmountMock } from './get-month-canceled-orders-amount-mock'
 import { getMonthOrdersAmountMock } from './get-month-orders-amount-mock'
+import { getMonthRevenue } from './get-month-revenue-mock'
 import { getOrderDetailsMock } from './get-orders-details-mock'
 import { getOrdersMock } from './get-orders-mock'
 import { getPopularProductsMock } from './get-popular-products-mock'
@@ -23,6 +24,7 @@ export const handlers = [
   getMonthOrdersAmountMock,
   getPopularProductsMock,
   getDailyRevenueInPeriodMock,
+  getMonthRevenue,
   getProfileMock,
   getManagedRestaurantMock,
   updateProfileMock,
