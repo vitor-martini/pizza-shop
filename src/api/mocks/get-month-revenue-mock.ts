@@ -6,7 +6,7 @@ export const getMonthRevenue = http.get<never, never, GetMonthRevenueResponse>(
   '/metrics/month-receipt',
   () => {
     return HttpResponse.json({
-      receipt: 20000,
+      receipt: 2000000,
       diffFromLastMonth: 40,
     })
   },
